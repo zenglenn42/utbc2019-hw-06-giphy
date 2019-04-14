@@ -11,12 +11,59 @@
     ></script>
     <script src="assets/js/external/bootstrap-4.3.1.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/external/bootstrap-4.3.1.min.css" />
+    <link href="assets/css/style.css" rel="stylesheet" />
     <script type="text/javascript" src="assets/js/model.js"></script>
     <script type="text/javascript" src="assets/js/controller.js"></script>
   </head>
   <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <a class="navbar-brand" href="#">GifTastic</a>
+      <div class="container">
+        <div class="navbar-header">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="starter-template"></div>
+      <div class="btn-group"></div>
+      <div class="container">
+        <div class="row">
+          
+          <div id="giphyImages" class="col-sm-8">
+            <!-- programmatically add giphy images here -->
+          </div>
+
+          <!-- search box -->
+          <form class="col-sm-4 pull-right">
+            <div class="form-group">
+              <label>Add a button:</label>
+              <input
+                id="searchText"
+                type="text"
+                class="form-control"
+                placeholder="clouds"
+              />
+              <span class="help-block"
+                >Enter a keyword search term to associate with the button.</span
+              >
+            </div>
+            <button id="addButton" type="button" class="btn btn-primary">
+              Submit
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
     <script type="text/javascript">
-      controller = new Controller();
+      $(document).ready(function() {
+        controller = new Controller();
+      });
     </script>
   </body>
 </html>
