@@ -1,9 +1,6 @@
 function Model() {}
 Model.prototype.apiBaseUrl = "https://api.giphy.com/v1/gifs/search";
-// See: https://github.com/Giphy/GiphyAPI#search-endpoint
-//      Using public beta key for now since this is a student app
-//      per their API usage guidelines.
-Model.prototype.apiKey = "dc6zaTOxFJmzC";
+Model.prototype.apiKey = "lKUjT4BcK0HQGHbuRBwBSUJTMJquQq77";
 Model.prototype.apiSearchLimit = 10;
 Model.prototype.apiMethod = "GET";
 Model.prototype.appTitle = "GIPHY App";
@@ -33,9 +30,8 @@ Model.prototype.hasThatAlready = function(searchStr) {
 	return  (this.searchList.indexOf(searchStr.toLowerCase()) !== -1);
 }
 Model.prototype.getQueryUrl = function(giphyTag) {
-	let corsFixUrl = "https://cors-anywhere.herokuapp.com/";
 	var queryUrl = encodeURI(
-		`${corsFixUrl}${this.apiBaseUrl}?q=${giphyTag}&api_key=${this.apiKey}&limit=${this.apiSearchLimit}`
+		`${this.apiBaseUrl}?&q=${giphyTag}&api_key=${this.apiKey}&limit=${this.apiSearchLimit}`
 	);
 	return queryUrl;
 }
