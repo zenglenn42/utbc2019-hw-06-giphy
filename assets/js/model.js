@@ -33,8 +33,9 @@ Model.prototype.hasThatAlready = function(searchStr) {
 	return  (this.searchList.indexOf(searchStr.toLowerCase()) !== -1);
 }
 Model.prototype.getQueryUrl = function(giphyTag) {
+	let corsFixUrl = "https://cors-anywhere.herokuapp.com/";
 	var queryUrl = encodeURI(
-		`${this.apiBaseUrl}?q=${giphyTag}&api_key=${this.apiKey}&limit=${this.apiSearchLimit}`
+		`${corsFixUrl}${this.apiBaseUrl}?q=${giphyTag}&api_key=${this.apiKey}&limit=${this.apiSearchLimit}`
 	);
 	return queryUrl;
 }

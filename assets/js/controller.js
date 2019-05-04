@@ -41,6 +41,10 @@ Controller.prototype.getClickGiphyButtonCB = function() {
 		$.ajax({
 			url: queryUrl,
 			method: that.model.apiMethod,
+			headers: {
+				// Necessary with CORS-anywhere fix.
+				"x-requested-with": "xhr"
+			}
 		}).done(function(response) {
 
 			// Verify we're getting data back from the endpoint.
