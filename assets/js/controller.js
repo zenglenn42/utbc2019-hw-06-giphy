@@ -40,7 +40,7 @@ Controller.prototype.getClickGiphyButtonCB = function() {
 	
 		$.ajax({
 			url: queryUrl,
-			method: that.model.apiMethod,
+			method: that.model.apiMethod
 		}).done(function(response) {
 
 			// Verify we're getting data back from the endpoint.
@@ -58,6 +58,7 @@ Controller.prototype.getClickGiphyButtonCB = function() {
 				$("#giphyImages").append(img);
 			}
 		}).fail(function(err) {
+			console.log(err);
 			throw err;
 		});
 		return false;
